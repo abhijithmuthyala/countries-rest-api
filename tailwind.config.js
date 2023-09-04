@@ -5,6 +5,42 @@ module.exports = {
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
-  theme: {},
+  theme: {
+    colors: {
+      gray: {
+        100: "#ffffff",
+        200: "#fafafa",
+        300: "#c4c4c4",
+        400: "#b2b2b2",
+        500: "#808080",
+        900: "#000000",
+      },
+      blue: {
+        600: "#2b3844",
+        700: "#202c36",
+        800: "#111517",
+      },
+    },
+    fontFamily: {
+      nunito: ["Nunito", "sans-serif"],
+    },
+    fontSize: {
+      xs: "0.75rem",
+      sm: "0.875rem",
+      base: "1rem",
+      lg: "1.125rem",
+    },
+    fontWeight: {
+      normal: 400,
+      medium: 600,
+      bold: 800,
+    },
+    lineHeight: {
+      normal: "normal",
+      1: "1rem",
+      2: "1.25rem",
+      3: "1.625rem",
+    },
+  },
   plugins: [],
 };
