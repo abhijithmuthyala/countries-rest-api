@@ -31,7 +31,7 @@ module.exports = {
       lg: "1.125rem",
     },
     fontWeight: {
-      normal: 400,
+      normal: 300,
       medium: 600,
       bold: 800,
     },
@@ -40,6 +40,10 @@ module.exports = {
       1: "1rem",
       2: "1.25rem",
       3: "1.625rem",
+    },
+    backgroundImage: {
+      "dark-mode": "url('/icon-dark-mode.svg')",
+      "light-mode": "url('/icon-light-mode.svg')",
     },
   },
   plugins: [],
