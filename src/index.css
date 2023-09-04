@@ -15,4 +15,16 @@
     --blue-700: #202c36;
     --blue-800: #111517;
   }
+
+  .max-w-wrapper > :first-child {
+    max-width: 60rem;
+    margin: 0 auto;
+  }
+
+  body {
+    font-family: "Nunito Sans", sans-serif;
+    font-size: 0.875rem;
+    font-weight: 300;
+    color: var(--gray-100);
+  }
 }
