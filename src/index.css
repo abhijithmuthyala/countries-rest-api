@@ -16,6 +16,10 @@
     --blue-800: #111517;
   }
 
+  input {
+    background: none;
+  }
+
   .max-w-wrapper > :first-child {
     max-width: 60rem;
     margin: 0 auto;
@@ -26,5 +30,6 @@
     font-size: 0.875rem;
     font-weight: 300;
     color: var(--gray-100);
+    background-color: var(--blue-700);
   }
 }
