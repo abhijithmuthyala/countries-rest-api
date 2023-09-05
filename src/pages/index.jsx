@@ -13,9 +13,6 @@ export default function Home({ countriesData }) {
         <title>Home</title>
       </Head>
       <main>
-        <div className="max-w-wrapper px-4 bg-blue-600">
-          <Header />
-        </div>
         <div className="max-w-wrapper px-4 py-6">
           <Form />
         </div>

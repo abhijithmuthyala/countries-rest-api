@@ -29,6 +29,7 @@ module.exports = {
       sm: "0.875rem",
       base: "1rem",
       lg: "1.125rem",
+      xl: "1.375rem",
     },
     fontWeight: {
       normal: 300,
@@ -40,12 +41,14 @@ module.exports = {
       1: "1rem",
       2: "1.25rem",
       3: "1.625rem",
+      4: "2rem",
     },
     backgroundImage: {
       "dark-mode": "url('/icon-dark-mode.svg')",
       "light-mode": "url('/icon-light-mode.svg')",
       search: "url('/icon-search.svg')",
       "down-arrow": "url('/icon-down-arrow.svg')",
+      "left-arrow": "url('/icon-left-arrow.svg')",
     },
   },
   plugins: [],
