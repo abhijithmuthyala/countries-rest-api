@@ -21,7 +21,7 @@ export default function CountryDetails({ data }) {
               property: "Native Name",
               value:
                 data.name.nativeName[Object.keys(data.name.nativeName)[0]]
-                  .common,
+                  ?.common,
             },
             { property: "Population", value: data.population },
             { property: "Region", value: data.region },
@@ -34,7 +34,7 @@ export default function CountryDetails({ data }) {
             { property: "Top Level Domain", value: data.tld || "todo" },
             {
               property: "Currencies",
-              value: Object.values(data.currencies)[0].name,
+              value: Object.values(data.currencies)[0]?.name,
             },
             {
               property: "Languages",

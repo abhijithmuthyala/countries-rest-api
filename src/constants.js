@@ -2,11 +2,11 @@ const baseURL = "https://restcountries.com/v3.1";
 
 export const API_URL = {
   all: `${baseURL}/all?fields=name,flags,population,region,capital`,
-  countries: `${baseURL}/all?fields=name`,
-  country(name) {
-    return `${baseURL}/name/${name}?fullText=true&fields=name,nativeName,population,region,subregion,capital,topLevelDomain,currencies,languages,borders,flags`;
+  countries: `${baseURL}/all?fields=cca3`,
+  country(code) {
+    return `${baseURL}/alpha/${code}?fields=name,nativeName,population,region,subregion,capital,topLevelDomain,currencies,languages,borders,flags,cca3`;
   },
   borders(code) {
-    return `${baseURL}/alpha/${code}?fields=name`;
+    return `${baseURL}/alpha/${code}?fields=name,cca3`;
   },
 };

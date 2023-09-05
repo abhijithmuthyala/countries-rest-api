@@ -9,10 +9,15 @@ export default function BorderCountries({ borders }) {
       <ul className="flex flex-wrap gap-x-2 gap-y-4 rounded-sm">
         {borders.map((border) => (
           <li
-            key={border}
-            className="basis-24 shrink-0 bg-blue-600 text-center py-1.5"
+            key={border.code}
+            className="basis-24 shrink-0 bg-blue-600 py-1.5"
           >
-            <Link href={`/country/${border.toLowerCase()}`}>{border}</Link>
+            <Link
+              href={`/country/${border.code.toLowerCase()}`}
+              className="block text-center"
+            >
+              {border.name}
+            </Link>
           </li>
         ))}
       </ul>

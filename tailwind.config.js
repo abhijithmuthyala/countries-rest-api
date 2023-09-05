@@ -50,12 +50,6 @@ module.exports = {
       "down-arrow": "url('/icon-down-arrow.svg')",
       "left-arrow": "url('/icon-left-arrow.svg')",
     },
-    backgroundImage: {
-      "dark-mode": "url('/icon-dark-mode.svg')",
-      "light-mode": "url('/icon-light-mode.svg')",
-      search: "url('/icon-search.svg')",
-      "down-arrow": "url('/icon-down-arrow.svg')",
-    },
   },
   plugins: [],
 };
