@@ -10,7 +10,7 @@ export default function Form() {
     <form
       action="/"
       onSubmit={handleSubmit}
-      className="flex flex-wrap gap-x-6 gap-y-[2.5rem] justify-between"
+      className="flex flex-wrap justify-between gap-x-6 gap-y-[2.5rem]"
     >
       <Searchbar />
       <RegionSelector />

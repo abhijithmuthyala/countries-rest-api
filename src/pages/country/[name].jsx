@@ -30,7 +30,7 @@ export async function getStaticProps({ params }) {
         const res = await fetch(API_URL.borders(border));
         const data = await res.json();
         return { code: data.cca3, name: data.name.common };
-      })
+      }),
     );
     data.borders = borders.map((border) => border.value);
 

@@ -13,7 +13,7 @@ export default function App({ Component, pageProps }) {
 
 function LayoutHeader() {
   return (
-    <div className="max-w-wrapper px-4 bg-blue-600">
+    <div className="max-w-wrapper bg-blue-600 px-4">
       <Header />
     </div>
   );
