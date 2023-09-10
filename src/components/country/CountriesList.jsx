@@ -30,7 +30,7 @@ export default function CountriesList({ countriesData }) {
   }
 
   return (
-    <ul className="grid grid-cols-[repeat(auto-fit,_264px)] justify-center gap-x-[75px] gap-y-[40px] lg:justify-between lg:gap-x-[60px] lg:gap-y-16">
+    <ul className="grid grid-cols-[repeat(auto-fit,_264px)] justify-center gap-x-[4.5rem] gap-y-[40px] md:gap-y-16 lg:justify-start">
       {filteredCountries.map(renderCountry)}
     </ul>
   );
