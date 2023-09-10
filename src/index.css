@@ -14,6 +14,8 @@
     --blue-600: #2b3844;
     --blue-700: #202c36;
     --blue-800: #111517;
+
+    --header-height: 5rem;
   }
 
   input {
@@ -31,5 +33,19 @@
     font-weight: 300;
     color: var(--gray-100);
     background-color: var(--blue-700);
+  }
+
+  #__next {
+    min-height: 100vh;
+  }
+}
+
+@layer utilities {
+  .h-header {
+    min-height: var(--header-height);
+  }
+
+  .h-main {
+    min-height: calc(100vh - var(--header-height));
   }
 }

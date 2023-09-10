@@ -10,7 +10,7 @@ export default function Page({ data }) {
       <Head>
         <title>Details of {data.name.common}</title>
       </Head>
-      <main>
+      <main className="h-main">
         <h1 className="sr-only">Details of {data.name.common}</h1>
         <div className="max-w-wrapper px-7 py-16">
           <CountryDetails data={data} />
