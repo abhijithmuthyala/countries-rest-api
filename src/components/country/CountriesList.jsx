@@ -6,15 +6,25 @@ import FormContext from "@/context/form";
 export default function CountriesList({ countriesData }) {
   const { formState } = useContext(FormContext);
 
-  const filteredCountries = countriesData.filter((countryData) =>
-    countryData.region.toLowerCase().includes(formState.filter)
-  );
+  const filteredCountries = countriesData.filter(filterCountries);
+
+  function filterCountries(countryData) {
+    const includesRegion = countryData.region
+      .toLowerCase()
+      .includes(formState.filter);
+    const includesSearch = countryData.name.official
+      .toLowerCase()
+      .includes(formState.searchQuery);
+
+    return includesRegion && includesSearch;
+  }
 
   if (filteredCountries.length === 0) {
     return (
       <p className="text-center text-xl font-medium text-gray-200">
-        No countries found in the region{" "}
-        {formState.filter.replace(/^\w/, (c) => c.toUpperCase())}
+        No countries {formState.searchQuery && "with name "}
+        {formState.searchQuery?.replace(/^\w/, (c) => c.toUpperCase())} found in
+        the region {formState.filter.replace(/^\w/, (c) => c.toUpperCase())}
       </p>
     );
   }

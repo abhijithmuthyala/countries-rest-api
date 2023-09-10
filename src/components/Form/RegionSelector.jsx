@@ -23,18 +23,17 @@ export default function RegionSelector() {
         id="region"
         value={formState.filter}
         onChange={handleChange}
-        className="basis-[12.5rem] px-6 py-3 max-h-12 bg-blue-600 rounded-md"
+        className="basis-[12.5rem] px-6 py-3 max-h-12 bg-blue-600 rounded-md bg-down-arrow bg-no-repeat bg-[size:.8rem] bg-[position:right_1.5rem_center] cursor-pointer appearance-none"
       >
         <option value="" disabled className="hidden">
           Filter by Region
         </option>
-        <option value="africa" className="inline-block mt-2">
-          Africa
-        </option>
+        <option value="africa">Africa</option>
         <option value="america">America</option>
         <option value="asia">Asia</option>
         <option value="europe">Europe</option>
-        <option value="oceana">Oceana</option>op
+        <option value="oceana">Oceana</option>
+        op
       </select>
     </>
   );
