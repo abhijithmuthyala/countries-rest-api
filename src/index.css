@@ -38,6 +38,10 @@
   #__next {
     min-height: 100vh;
   }
+
+  img.view-transition {
+    contain: layout;
+  }
 }
 
 @layer utilities {

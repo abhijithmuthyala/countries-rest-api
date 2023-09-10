@@ -13,6 +13,7 @@ export default function CountryDetails({ data }) {
         height={600}
         loading="eager"
         className="mx-auto aspect-[3/2] min-w-0 max-w-[35rem] grow basis-80 rounded-lg object-cover object-center"
+        style={{ viewTransitionName: `${data.cca3.toLowerCase()}` }}
       />
       <div className="grid grow basis-80 place-content-center">
         <h2 className="mb-4 text-xl font-bold">{data.name.common}</h2>
