@@ -1,4 +1,18 @@
+import { useContext } from "react";
+
+import FormContext from "@/context/form";
+import { formActions } from "@/context/form";
+
 export default function Searchbar() {
+  const { formState, dispatchForm } = useContext(FormContext);
+
+  function handleChange(event) {
+    dispatchForm({
+      type: formActions.searchQuery,
+      searchQuery: event.target.value.trim().toLowerCase(),
+    });
+  }
+
   return (
     <label
       htmlFor="input-country"
@@ -8,6 +22,8 @@ export default function Searchbar() {
       <input
         type="text"
         id="input-country"
+        value={formState.searchQuery}
+        onChange={handleChange}
         placeholder="Search for a country..."
         className="placeholder:text-gray-100 placeholder:text-xs focus:outline-none"
       />
