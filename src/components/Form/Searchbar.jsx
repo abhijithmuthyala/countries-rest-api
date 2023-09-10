@@ -16,16 +16,16 @@ export default function Searchbar() {
   return (
     <label
       htmlFor="input-country"
-      className="w-full max-w-[30rem] flex gap-x-6 items-center min-h-[3rem] px-8 bg-blue-600 rounded-md cursor-text focus-within:outline focus-within:outline-gray-300 focus-within:outline-2"
+      className="flex min-h-[3rem] w-full max-w-[30rem] cursor-text items-center gap-x-6 rounded-md bg-blue-600 px-8 focus-within:outline focus-within:outline-2 focus-within:outline-gray-300"
     >
-      <span className="inline-block w-4 aspect-square bg-search bg-center bg-cover bg-no-repeat"></span>
+      <span className="inline-block aspect-square w-4 bg-search bg-cover bg-center bg-no-repeat"></span>
       <input
         type="text"
         id="input-country"
         value={formState.searchQuery}
         onChange={handleChange}
         placeholder="Search for a country"
-        className="w-full placeholder:text-gray-100 placeholder:text-xs focus:outline-none"
+        className="w-full placeholder:text-xs placeholder:text-gray-100 focus:outline-none"
       />
     </label>
   );

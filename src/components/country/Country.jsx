@@ -4,7 +4,7 @@ export default function Country({ data }) {
   return (
     <li
       key={data.name.official}
-      className="grid grid-rows-[10rem,_minmax(176px,_auto)] bg-blue-600 rounded-lg overflow-hidden"
+      className="grid grid-rows-[10rem,_minmax(176px,_auto)] overflow-hidden rounded-lg bg-blue-600"
     >
       <Image
         src={data.flags.svg}
@@ -15,11 +15,11 @@ export default function Country({ data }) {
         className="self-stretch object-cover object-center"
       />
       <div className="p-6">
-        <h3 className="font-bold leading-3 text-lg mb-4">
+        <h3 className="mb-4 text-lg font-bold leading-3">
           {data.name.official}
         </h3>
         <div className="flex flex-col gap-y-2">
-          <p className="leading-1 text-sm">
+          <p className="text-sm leading-1">
             <span className="font-medium">Population</span>: {data.population}
           </p>
           <p>
