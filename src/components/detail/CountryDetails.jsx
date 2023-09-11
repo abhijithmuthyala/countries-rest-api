@@ -1,9 +1,17 @@
 import Image from "next/image";
 
+import { useState } from "react";
+
 import PropertiesGroup from "./PropertiesGroup";
 import BorderCountries from "./BorderCountries";
 
 export default function CountryDetails({ data }) {
+  const [showSkeleton, setShowSkeleton] = useState(true);
+
+  function handleImageLoad() {
+    setShowSkeleton(false);
+  }
+
   return (
     <article className="flex flex-wrap items-start justify-between gap-x-36 gap-y-11">
       <Image
@@ -13,7 +21,10 @@ export default function CountryDetails({ data }) {
         height={600}
         loading="eager"
         priority={true}
-        className="mx-auto aspect-[3/2] min-w-0 max-w-[35rem] grow basis-80 rounded-lg object-cover object-center"
+        onLoad={handleImageLoad}
+        className={`${
+          showSkeleton ? "skeleton" : ""
+        } mx-auto aspect-[3/2] min-w-0 max-w-[35rem] grow basis-80 rounded-lg object-cover object-center`}
       />
       <div className="grid grow basis-80 place-content-center">
         <h2 className="mb-4 text-xl font-bold">{data.name.common}</h2>
