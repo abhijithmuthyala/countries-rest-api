@@ -15,7 +15,11 @@ export default function Home({ countriesData }) {
   return (
     <>
       <Head>
-        <title>Home</title>
+        <title>Countries</title>
+        <meta
+          name="description"
+          content="Explore different countries and their data such as population, currency, langugaes, border countries."
+        />
       </Head>
       <MainContent countriesData={countriesData} />
     </>
