@@ -15,6 +15,8 @@
     --blue-700: #202c36;
     --blue-800: #111517;
 
+    --skeleton: 98, 131, 56;
+
     --header-height: 5rem;
   }
 
@@ -41,6 +43,20 @@
 
   #__next {
     min-height: 100vh;
+  }
+
+  .skeleton {
+    animation: skeleton infinite 1s ease-in;
+    animation-delay: 500ms;
+  }
+
+  @keyframes skeleton {
+    0% {
+      background: radial-gradient(rgba(var(--skeleton), 0.5), transparent);
+    }
+    100% {
+      background: radial-gradient(rgba(var(--skeleton), 1), transparent);
+    }
   }
 }
 

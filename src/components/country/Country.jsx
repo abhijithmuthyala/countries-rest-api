@@ -1,9 +1,18 @@
 import Image from "next/image";
 import Link from "next/link";
 
+import { useState } from "react";
+
 import { EAGER_LOAD_THRESHOLD } from "@/constants";
 
 export default function Country({ data, number }) {
+  const [showSkeleton, setShowSkeleton] = useState(true);
+  const shouldLoadEagerly = number <= EAGER_LOAD_THRESHOLD;
+
+  function handleImageLoad() {
+    setShowSkeleton(false);
+  }
+
   return (
     <li key={data.name.official}>
       <Link
@@ -15,15 +24,19 @@ export default function Country({ data, number }) {
           alt={`Flag of ${data.name.official}`}
           width={264}
           height={160}
-          loading={number <= EAGER_LOAD_THRESHOLD ? "eager" : "lazy"}
-          className="self-stretch object-cover object-center transition-all"
+          loading={shouldLoadEagerly ? "eager" : "lazy"}
+          priority={shouldLoadEagerly}
+          className={`self-stretch object-cover object-center transition-all ${
+            showSkeleton ? "skeleton" : ""
+          }`}
+          onLoad={handleImageLoad}
         />
         <div className="p-6">
           <h3 className="mb-4 text-lg font-bold leading-3">
             {data.name.official}
           </h3>
           <div className="flex flex-col gap-y-2">
-            <p className="text-sm leading-1">
+            <p className="leading-1 text-sm">
               <span className="font-medium">Population</span>: {data.population}
             </p>
             <p>

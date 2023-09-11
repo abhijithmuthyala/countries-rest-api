@@ -12,6 +12,7 @@ export default function CountryDetails({ data }) {
         width={900}
         height={600}
         loading="eager"
+        priority={true}
         className="mx-auto aspect-[3/2] min-w-0 max-w-[35rem] grow basis-80 rounded-lg object-cover object-center"
       />
       <div className="grid grow basis-80 place-content-center">
