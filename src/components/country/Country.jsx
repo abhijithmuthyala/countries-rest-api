@@ -21,7 +21,7 @@ export default function Country({ data, number }) {
       >
         <Image
           src={data.flags.svg}
-          alt={`Flag of ${data.name.official}`}
+          alt={data.flags.alt}
           width={264}
           height={160}
           loading={shouldLoadEagerly ? "eager" : "lazy"}

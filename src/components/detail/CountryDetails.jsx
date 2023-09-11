@@ -16,7 +16,7 @@ export default function CountryDetails({ data }) {
     <article className="flex flex-wrap items-start justify-between gap-x-36 gap-y-11">
       <Image
         src={data.flags.svg}
-        alt="Flag"
+        alt={data.flags.alt}
         width={900}
         height={600}
         loading="eager"
