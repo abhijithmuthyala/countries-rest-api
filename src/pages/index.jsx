@@ -35,7 +35,7 @@ function MainContent({ countriesData }) {
 
   return (
     <main className="h-main">
-      <div className="max-w-wrapper px-4 py-6">
+      <div className="max-w-wrapper px-4 py-6 md:py-12">
         <Form>
           <Searchbar
             query={formState.searchQuery}

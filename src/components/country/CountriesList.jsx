@@ -35,7 +35,7 @@ export default function CountriesList({ countriesData, filter, query }) {
 
   return (
     <>
-      <ul className="grid grid-cols-[repeat(auto-fit,_264px)] justify-center gap-x-[4.5rem] gap-y-[40px] md:gap-y-16 lg:justify-start">
+      <ul className="grid grid-cols-[repeat(auto-fit,_264px)] justify-center gap-x-[4.5rem] gap-y-[40px] md:gap-y-[4.5rem] lg:justify-start">
         {filteredCountries.map((countryData, index) => (
           <Country
             data={countryData}

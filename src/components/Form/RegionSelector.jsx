@@ -21,7 +21,7 @@ export default function RegionSelector({ value, dispatchForm }) {
         id="region"
         value={value}
         onChange={handleChange}
-        className="max-h-12 basis-[12.5rem] cursor-pointer appearance-none rounded-md bg-blue-600 bg-down-arrow bg-[size:.8rem] bg-[position:right_1.5rem_center] bg-no-repeat px-6 py-3"
+        className="basis-[12.5rem] cursor-pointer appearance-none rounded-md bg-blue-600 bg-down-arrow bg-[size:.8rem] bg-[position:right_1.5rem_center] bg-no-repeat px-6 py-3"
       >
         <option value="" disabled className="hidden">
           Filter by Region

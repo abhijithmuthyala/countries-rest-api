@@ -27,7 +27,9 @@ export default function CountryDetails({ data }) {
         } mx-auto aspect-[3/2] min-w-0 max-w-[35rem] grow basis-80 rounded-lg object-cover object-center`}
       />
       <div className="grid grow basis-80 place-content-center">
-        <h2 className="mb-4 text-xl font-bold">{data.name.common}</h2>
+        <h2 className="mb-4 text-xl font-bold md:text-3xl">
+          {data.name.common}
+        </h2>
         <div className="mb-8 flex flex-wrap gap-x-28 gap-y-8">
           <PropertiesGroup
             data={[
