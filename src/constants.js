@@ -10,3 +10,6 @@ export const API_URL = {
     return `${baseURL}/alpha/${code}?fields=name,cca3`;
   },
 };
+
+export const EAGER_LOAD_THRESHOLD = 12;
+export const DEBOUNCE_THRESHOLD = 350;

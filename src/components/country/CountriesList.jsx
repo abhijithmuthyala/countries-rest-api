@@ -1,8 +1,6 @@
 import Country from "./Country";
 
 export default function CountriesList({ countriesData, filter, query }) {
-  console.log("rendering CountriesList");
-
   const filteredCountries = countriesData.filter(filterCountries);
 
   function filterCountries(countryData) {
@@ -26,11 +24,13 @@ export default function CountriesList({ countriesData, filter, query }) {
 
   return (
     <ul className="grid grid-cols-[repeat(auto-fit,_264px)] justify-center gap-x-[4.5rem] gap-y-[40px] md:gap-y-16 lg:justify-start">
-      {filteredCountries.map(renderCountry)}
+      {filteredCountries.map((countryData, index) => (
+        <Country
+          data={countryData}
+          key={countryData.name.official}
+          number={index + 1}
+        />
+      ))}
     </ul>
   );
-
-  function renderCountry(countryData) {
-    return <Country data={countryData} key={countryData.name.official} />;
-  }
 }

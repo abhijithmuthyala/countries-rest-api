@@ -1,7 +1,9 @@
 import Image from "next/image";
 import Link from "next/link";
 
-export default function Country({ data }) {
+import { EAGER_LOAD_THRESHOLD } from "@/constants";
+
+export default function Country({ data, number }) {
   return (
     <li key={data.name.official}>
       <Link
@@ -13,7 +15,7 @@ export default function Country({ data }) {
           alt={`Flag of ${data.name.official}`}
           width={264}
           height={160}
-          loading="lazy"
+          loading={number <= EAGER_LOAD_THRESHOLD ? "eager" : "lazy"}
           className="self-stretch object-cover object-center transition-all"
         />
         <div className="p-6">

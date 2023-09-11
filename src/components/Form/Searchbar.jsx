@@ -1,8 +1,7 @@
 import { useRef } from "react";
 
 import { formActions } from "@/reducers/form";
-
-const DEBOUNCE_THRESHOLD = 350;
+import { DEBOUNCE_THRESHOLD } from "@/constants";
 
 export default function Searchbar({ query, dispatchForm }) {
   const timerRef = useRef(null);
