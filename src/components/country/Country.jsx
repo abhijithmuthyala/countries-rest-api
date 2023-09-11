@@ -36,7 +36,7 @@ export default function Country({ data, number }) {
             {data.name.official}
           </h3>
           <div className="flex flex-col gap-y-2">
-            <p className="leading-1 text-sm">
+            <p className="text-sm leading-1">
               <span className="font-medium">Population</span>: {data.population}
             </p>
             <p>
