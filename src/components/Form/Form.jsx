@@ -1,7 +1,7 @@
 import Searchbar from "./Searchbar";
 import RegionSelector from "./RegionSelector";
 
-export default function Form() {
+export default function Form({ children }) {
   function handleSubmit(event) {
     event.preventDefault();
   }
@@ -12,8 +12,7 @@ export default function Form() {
       onSubmit={handleSubmit}
       className="flex flex-wrap justify-between gap-x-6 gap-y-[2.5rem]"
     >
-      <Searchbar />
-      <RegionSelector />
+      {children}
     </form>
   );
 }

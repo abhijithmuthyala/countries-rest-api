@@ -1,16 +1,24 @@
-import { useContext } from "react";
+import { useRef } from "react";
 
-import FormContext from "@/context/form";
-import { formActions } from "@/context/form";
+import { formActions } from "@/reducers/form";
 
-export default function Searchbar() {
-  const { formState, dispatchForm } = useContext(FormContext);
+const DEBOUNCE_THRESHOLD = 350;
+
+export default function Searchbar({ query, dispatchForm }) {
+  const timerRef = useRef(null);
 
   function handleChange(event) {
     dispatchForm({
       type: formActions.searchQuery,
       searchQuery: event.target.value.trim().toLowerCase(),
     });
+
+    clearTimeout(timerRef.current);
+    timerRef.current = setTimeout(function queryDebounce() {
+      dispatchForm({
+        type: formActions.debouncedSearchQuery,
+      });
+    }, DEBOUNCE_THRESHOLD);
   }
 
   return (
@@ -22,7 +30,7 @@ export default function Searchbar() {
       <input
         type="text"
         id="input-country"
-        value={formState.searchQuery}
+        value={query}
         onChange={handleChange}
         placeholder="Search for a country"
         className="w-full placeholder:text-xs placeholder:text-gray-100 focus:outline-none"

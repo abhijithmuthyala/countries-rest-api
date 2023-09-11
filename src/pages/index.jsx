@@ -1,12 +1,15 @@
 import Head from "next/head";
+import { memo, useReducer } from "react";
 
-import Header from "../components/Header";
 import Form from "../components/Form/Form";
 import CountriesList from "../components/country/CountriesList";
 
+import { formReducer } from "@/reducers/form";
 import { API_URL } from "../constants";
+import Searchbar from "@/components/Form/Searchbar";
+import RegionSelector from "@/components/Form/RegionSelector";
 
-import { FormProvider } from "@/context/form";
+const MemoizedCountriesList = memo(CountriesList);
 
 export default function Home({ countriesData }) {
   return (
@@ -14,20 +17,43 @@ export default function Home({ countriesData }) {
       <Head>
         <title>Home</title>
       </Head>
-      <main className="h-main">
-        <FormProvider>
-          <div className="max-w-wrapper px-4 py-6">
-            <Form />
-          </div>
-          <div className="max-w-wrapper px-4 py-2">
-            <section>
-              <h2 className="sr-only">List of countries data</h2>
-              <CountriesList countriesData={countriesData} />
-            </section>
-          </div>
-        </FormProvider>
-      </main>
+      <MainContent countriesData={countriesData} />
     </>
+  );
+}
+
+function MainContent({ countriesData }) {
+  const [formState, dispatchForm] = useReducer(formReducer, {
+    searchQuery: "",
+    debouncedSearchQuery: "",
+    filter: "",
+  });
+
+  return (
+    <main className="h-main">
+      <div className="max-w-wrapper px-4 py-6">
+        <Form>
+          <Searchbar
+            query={formState.searchQuery}
+            dispatchForm={dispatchForm}
+          />
+          <RegionSelector
+            value={formState.filter}
+            dispatchForm={dispatchForm}
+          />
+        </Form>
+      </div>
+      <div className="max-w-wrapper px-4 py-2">
+        <section>
+          <h2 className="sr-only">List of countries data</h2>
+          <MemoizedCountriesList
+            countriesData={countriesData}
+            filter={formState.filter}
+            query={formState.debouncedSearchQuery}
+          />
+        </section>
+      </div>
+    </main>
   );
 }
 
