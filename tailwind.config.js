@@ -20,6 +20,7 @@ module.exports = {
         700: "#202c36",
         800: "#111517",
       },
+      card: "var(--bg-card)",
     },
     fontFamily: {
       nunito: ["Nunito", "sans-serif"],
@@ -46,11 +47,9 @@ module.exports = {
       4: "2rem",
     },
     backgroundImage: {
-      "dark-mode": "url('/icon-dark-mode.svg')",
-      "light-mode": "url('/icon-light-mode.svg')",
-      search: "url('/icon-search.svg')",
-      "down-arrow": "url('/icon-down-arrow.svg')",
-      "left-arrow": "url('/icon-left-arrow.svg')",
+      mode: "var(--mode-icon)",
+      search: "var(--search-icon)",
+      "down-arrow": "var(--down-arrow-icon)",
     },
   },
   plugins: [],

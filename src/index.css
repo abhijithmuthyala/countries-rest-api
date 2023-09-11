@@ -24,6 +24,10 @@
     background: none;
   }
 
+  input::placeholder {
+    color: inherit;
+  }
+
   .max-w-wrapper > :first-child {
     max-width: 80rem;
     margin: 0 auto;
@@ -34,11 +38,28 @@
   }
 
   body {
+    --body-text: var(--gray-100);
+    --body-bg: var(--blue-700);
+    --bg-card: var(--blue-600);
+    --mode-icon: url("/icon-dark-mode.svg");
+    --search-icon: url("/icon-search.svg");
+    --down-arrow-icon: url("/icon-down-arrow.svg");
+
     font-family: "Nunito Sans", sans-serif;
     font-size: 0.875rem;
     font-weight: 300;
-    color: var(--gray-100);
-    background-color: var(--blue-700);
+    color: var(--body-text);
+    background-color: var(--body-bg);
+  }
+
+  body.light {
+    --body-text: var(--blue-800);
+    --body-bg: var(--gray-200);
+    --bg-card: var(--gray-100);
+
+    --mode-icon: url("/icon-light-mode.svg");
+    --search-icon: url("/icon-search-light.svg");
+    --down-arrow-icon: url("/icon-down-arrow-light.svg");
   }
 
   #__next {

@@ -17,7 +17,7 @@ export default function Country({ data, number }) {
     <li key={data.name.official}>
       <Link
         href={`/country/${data.cca3.toLowerCase()}`}
-        className="grid h-full grid-rows-[10rem,_minmax(176px,_auto)] overflow-hidden rounded-lg bg-blue-600 transition-all hover:scale-105"
+        className="grid h-full grid-rows-[10rem,_minmax(176px,_auto)] overflow-hidden rounded-lg bg-card drop-shadow-md transition-all hover:scale-105"
       >
         <Image
           src={data.flags.svg}

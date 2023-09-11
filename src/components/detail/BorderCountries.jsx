@@ -10,7 +10,7 @@ export default function BorderCountries({ borders }) {
         {borders.map((border) => (
           <li
             key={border.code}
-            className="min-w-[6rem] bg-blue-600 px-3 py-1.5"
+            className="min-w-[6rem] bg-card px-3 py-1.5 shadow-sm"
           >
             <Link
               href={`/country/${border.code.toLowerCase()}`}

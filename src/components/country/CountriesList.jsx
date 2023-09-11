@@ -25,7 +25,7 @@ export default function CountriesList({ countriesData, filter, query }) {
 
   if (filteredCountries.length === 0) {
     return (
-      <p className="text-center text-xl font-medium text-gray-200">
+      <p className="text-center text-xl font-medium">
         No countries {query && "with name "}
         {query?.replace(/^\w/, (c) => c.toUpperCase())} found in the region{" "}
         {filter.replace(/^\w/, (c) => c.toUpperCase())}
