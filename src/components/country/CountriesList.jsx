@@ -27,8 +27,9 @@ export default function CountriesList({ countriesData, filter, query }) {
     return (
       <p className="text-center text-xl font-medium">
         No countries {query && "with name "}
-        {query?.replace(/^\w/, (c) => c.toUpperCase())} found in the region{" "}
-        {filter.replace(/^\w/, (c) => c.toUpperCase())}
+        {query?.replace(/^\w/, (c) => c.toUpperCase())} found{" "}
+        {filter.length > 0 &&
+          `in the region ${filter.replace(/^\w/, (c) => c.toUpperCase())}`}
       </p>
     );
   }

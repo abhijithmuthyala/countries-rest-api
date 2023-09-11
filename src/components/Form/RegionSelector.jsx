@@ -26,12 +26,12 @@ export default function RegionSelector({ value, dispatchForm }) {
         <option value="" disabled className="hidden">
           Filter by Region
         </option>
+        <option value="">None</option>
         <option value="africa">Africa</option>
         <option value="america">America</option>
         <option value="asia">Asia</option>
         <option value="europe">Europe</option>
         <option value="oceania">Oceania</option>
-        op
       </select>
     </>
   );

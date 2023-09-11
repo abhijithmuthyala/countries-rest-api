@@ -47,7 +47,7 @@ export default function CountryDetails({ data }) {
           />
           <PropertiesGroup
             data={[
-              { property: "Top Level Domain", value: data.tld || "todo" },
+              { property: "Top Level Domain", value: data.tld[0] },
               {
                 property: "Currencies",
                 value: Object.values(data.currencies)[0]?.name,
@@ -59,7 +59,7 @@ export default function CountryDetails({ data }) {
             ]}
           />
         </div>
-        <BorderCountries borders={data.borders} />
+        {data.borders.length > 0 && <BorderCountries borders={data.borders} />}
       </div>
     </article>
   );
