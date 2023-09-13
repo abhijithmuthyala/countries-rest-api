@@ -27,7 +27,6 @@ export default function Country({ data, number }) {
             height={160}
             loading={shouldLoadEagerly ? "eager" : "lazy"}
             priority={shouldLoadEagerly}
-            key={data.name.official}
             className={`h-full object-cover object-center ${
               showSkeleton ? "skeleton" : ""
             }`}
