@@ -22,7 +22,6 @@ export default function CountryDetails({ data }) {
         loading="eager"
         priority={true}
         onLoad={handleImageLoad}
-        key={data.name.common}
         className={`${
           showSkeleton ? "skeleton" : ""
         } mx-auto aspect-[3/2] min-w-0 max-w-[35rem] grow basis-80 rounded-lg object-cover object-center`}
