@@ -14,18 +14,23 @@ export default function CountryDetails({ data }) {
 
   return (
     <article className="flex flex-wrap items-start justify-between gap-x-36 gap-y-11">
-      <Image
-        src={data.flags.svg}
-        alt={data.flags.alt}
-        width={900}
-        height={600}
-        loading="eager"
-        priority={true}
-        onLoad={handleImageLoad}
+      <div
         className={`${
           showSkeleton ? "skeleton" : ""
-        } mx-auto aspect-[3/2] min-w-0 max-w-[35rem] grow basis-80 rounded-lg object-cover object-center`}
-      />
+        } mx-auto aspect-[3/2] min-w-0 max-w-[35rem] grow basis-80 overflow-hidden rounded-lg`}
+      >
+        <Image
+          src={data.flags.svg}
+          alt={data.flags.alt}
+          width={900}
+          height={600}
+          loading="eager"
+          priority={true}
+          onLoad={handleImageLoad}
+          className={`h-full object-cover object-center`}
+        />
+      </div>
+
       <div className="grid grow basis-80 place-content-center">
         <h2 className="mb-4 text-xl font-bold md:text-3xl">
           {data.name.common}

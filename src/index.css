@@ -67,6 +67,20 @@
   }
 
   .skeleton {
+    position: relative;
+  }
+
+  .skeleton::after {
+    display: block;
+    content: "";
+    width: 100%;
+    height: 100%;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 10;
+
     animation: skeleton infinite 1s ease-in;
     animation-delay: 500ms;
   }
