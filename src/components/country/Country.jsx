@@ -19,18 +19,21 @@ export default function Country({ data, number }) {
         href={`/country/${data.cca3.toLowerCase()}`}
         className="grid h-full grid-rows-[10rem,_minmax(176px,_auto)] overflow-hidden rounded-lg bg-card drop-shadow-md transition-all hover:scale-105"
       >
-        <Image
-          src={data.flags.svg}
-          alt={data.flags.alt}
-          width={264}
-          height={160}
-          loading={shouldLoadEagerly ? "eager" : "lazy"}
-          priority={shouldLoadEagerly}
-          className={`self-stretch object-cover object-center transition-all ${
-            showSkeleton ? "skeleton" : ""
-          }`}
-          onLoad={handleImageLoad}
-        />
+        <div className={`self-stretch ${showSkeleton ? "skeleton" : ""}`}>
+          <Image
+            src={data.flags.svg}
+            alt={data.flags.alt}
+            width={264}
+            height={160}
+            loading={shouldLoadEagerly ? "eager" : "lazy"}
+            priority={shouldLoadEagerly}
+            className={`h-full object-cover object-center ${
+              showSkeleton ? "skeleton" : ""
+            }`}
+            onLoad={handleImageLoad}
+          />
+        </div>
+
         <div className="p-6">
           <h3 className="mb-4 text-lg font-bold leading-3">
             {data.name.official}
